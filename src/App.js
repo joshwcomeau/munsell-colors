@@ -40,6 +40,14 @@ function App() {
         b: {b}
         <br />
       </p>
+      <br />
+      <br />
+      <br />
+      <p>
+        <a href="https://privet-kitty.github.io/munsell.js/modules.html">
+          Source
+        </a>
+      </p>
     </>
   );
 }
