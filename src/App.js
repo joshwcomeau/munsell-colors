@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import * as munsell from 'munsell';
+
+import './styles.css';
 
 function App() {
+  const [val, setVal] = React.useState('');
+
+  let l, a, b;
+  try {
+    [l, a, b] = munsell.munsellToLab(val);
+  } catch (err) {
+    console.error(err);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <form>
+        <label>
+          Input munsell color:
+          <br />
+          <input
+            type="text"
+            value={val}
+            onChange={(ev) => setVal(ev.target.value)}
+          />
+        </label>
+      </form>
+      <p style={{ marginTop: 16, color: '#555' }}>
+        Example Munsell color: <em>2.3YR 6.7/4.22</em>
+      </p>
+      <br />
+      <br />
+      <br />
+      <p>
+        L: {l}
+        <br />
+        a: {a}
+        <br />
+        b: {b}
+        <br />
+      </p>
+    </>
   );
 }
 
