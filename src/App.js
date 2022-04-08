@@ -45,7 +45,11 @@ function App() {
       <br />
       <p>
         <a href="https://privet-kitty.github.io/munsell.js/modules.html">
-          Source
+          API Documentation
+        </a>
+        {' - '}
+        <a href="https://www.npmjs.com/package/munsell">
+          Package README
         </a>
       </p>
     </>
